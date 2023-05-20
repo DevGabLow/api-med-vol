@@ -1,4 +1,4 @@
-package med.voll.api.address;
+package med.voll.api.domain.address;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
@@ -35,5 +35,29 @@ public class Address {
         this.complement = address.complement();
         this.city = address.city();
         this.uf = address.uf();
+    }
+
+    public void updateInfos(AddressData form) {
+        if(form.street() != null){
+            this.street = form.street();
+        }
+        if(form.district() != null){
+            this.district = form.district();
+        }
+        if(form.cep() != null){
+            this.cep = form.cep();
+        }
+        if(form.number() != null){
+            this.number = form.number();
+        }
+        if(form.complement() != null){
+            this.complement = form.complement();
+        }
+        if(form.city() != null){
+            this.city = form.city();
+        }
+        if(form.uf() != null){
+            this.uf = form.uf();
+        }
     }
 }
