@@ -2,5 +2,6 @@ package med.voll.api.doctor;
 
 import med.voll.api.address.AddressData;
 
-public record DoctorData(String name, String mail, String crm, Specialty specialty, AddressData addressData) {
+public record DoctorData(String name, String email, String crm, Specialty specialty, AddressData address) {
+
 }
