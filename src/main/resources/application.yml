@@ -2,8 +2,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/vollmed_api
-    username: root
-    password: 123456
+    username: ${USER_DB:root}
+    password: ${PASS_DB:123456}
   jpa:
     show-sql: true
     properties:
@@ -12,3 +12,8 @@ spring:
 server:
   error:
     include-stacktrace: never
+
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:12345678}
