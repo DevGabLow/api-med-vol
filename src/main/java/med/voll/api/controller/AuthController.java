@@ -2,7 +2,7 @@ package med.voll.api.controller;
 
 import jakarta.validation.Valid;
 import med.voll.api.config.security.JWTService;
-import med.voll.api.config.security.tokenDataJwt;
+import med.voll.api.config.security.TokenDataJwt;
 import med.voll.api.domain.user.User;
 import med.voll.api.domain.user.UserData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +30,6 @@ public class AuthController {
         var authentication = manager.authenticate(authenticationToken);
         var tokenJWT = jwtService.tokenGenerate((User) authentication.getPrincipal());
 
-        return ResponseEntity.ok(new tokenDataJwt(tokenJWT));
+        return ResponseEntity.ok(new TokenDataJwt(tokenJWT));
     }
 }
